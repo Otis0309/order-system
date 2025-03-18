@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>點餐系統</title>
+</head>
+<body>
+    <h1>點餐系統</h1>
+
+    <label>取餐時段：</label>
+    <select id="pickup-time">
+        <option value="">請選擇</option>
+    </select>
+    
+    <h2>選擇餐點</h2>
+
+    <!-- 湯包表格 -->
+    <h3>湯包</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>品項</th>
+                <th>要薑絲</th>
+                <th>不要薑絲</th>
+            </tr>
+        </thead>
+        <tbody id="dumpling-table">
+            <!-- JavaScript 會動態填充湯包 -->
+        </tbody>
+    </table>
+
+    <!-- 湯品與飲品 -->
+    <h3>湯品與飲品</h3>
+    <div id="drinks-soups">
+        <!-- JavaScript 會動態填充湯品與飲品 -->
+    </div>
+
+    <h2>填寫資訊</h2>
+    <label>取餐人姓名：</label> <input type="text" id="name"><br>
+    <label>手機號碼：</label> <input type="text" id="phone"><br>
+
+    <button onclick="submitOrder()">提交訂單</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
