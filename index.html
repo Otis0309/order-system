@@ -1,228 +1,88 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>找老板行動餐車 - 線上預訂 - 桂華街</title>
-    <style>
-        /* 整體背景顏色 */
-        body {
-            background-color: #fffae6; /* 淡黃色 */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* 讓表單區塊有白色背景 + 陰影 */
-        .container {
-            width: 80%;
-            max-width: 800px;
-            margin: 30px auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* 美化標題 */
-        h1, h2, h3 {
-            text-align: center;
-            color: #333;
-        }
-
-        /* 宣傳公告區塊 */
-        .announcement {
-            background-color: #fffae6;
-            border-left: 6px solid #ffcc00;
-            padding: 15px;
-            margin: 20px 0;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        .announcement strong {
-            color: #d9534f;
-        }
-
-        /* 美化表格 */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px 16px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f4f4f4;
-            font-weight: bold;
-        }
-
-        tbody tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        /* 美化輸入框與選單 */
-        select, input {
-            display: block;
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
-
-        /* 美化按鈕 */
-        button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 15px;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>找老板行動餐車 - 線上預訂 - 桂華街</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>找老板行動餐車 - 線上預訂 - 桂華街</h1>
+  <div class="container">
+    <h1>找老板行動餐車 - 線上預訂 - 桂華街</h1>
 
-        <!-- 📢 宣傳公告 -->
-        <div class="announcement">
-            <p>📢 <strong>小港桂華街的鄰居好友們注意！</strong> 📢</p>
-            <p>🥢 🥟 <strong>熱騰騰的湯包來啦！</strong> 🥟 🥢</p>
-            <p>🔥 想吃美味湯包，不想浪費時間排隊嗎？</p>
-            <p>🚚 現在就用 <strong>「找老闆點餐系統」</strong> 預訂，輕鬆取餐！</p>
-            <p>💥 <strong>限時優惠：</strong> 每預訂 <strong>2 份湯包立折 10 元</strong>！ 越訂越划算！💰</p>
-            <p>🕛 <strong>預訂截止時間：</strong> <span style="color:red;">中午 12:00</span></p>
-            <p>📆 <strong>取餐日期：</strong> 📅 2025/04/22（星期二）</p>
-            <p>📍 <strong>取餐地點：</strong> 📌 小港區 桂華街</p>
-            <p>🚀 趕快動動手指，提早預訂，美味不等人！ 🤩 數量有限，快來搶購！ 🏃💨</p>
-        </div>
-
-        <h2>取餐時段</h2>
-        <label for="pickup-time">請選擇取餐時段：</label>
-        <select id="pickup-time">
-            <option value="">請選擇</option>
-            <option value="16:00">16:00</option>
-            <option value="16:15">16:15</option>
-            <option value="16:00">16:00</option>
-            <option value="16:15">16:15</option>
-            <option value="16:30">16:30</option>
-            <option value="16:45">16:45</option>
-            <option value="17:00">17:00</option>
-            <option value="17:15">17:15</option>
-            <option value="17:30">17:30</option>
-            <option value="17:45">17:45</option>
-            <option value="18:00">18:00</option>
-            <option value="18:15">18:15</option>
-            <option value="18:30">18:30</option>
-            <option value="18:45">18:45</option>
-            <option value="19:00">19:00</option>
-            <option value="19:15">19:15</option>
-            <option value="19:30">19:30</option>
-            <option value="19:45">19:45</option>
-            <option value="20:00">20:00</option>
-            <option value="20:15">20:15</option>
-            <option value="20:30">20:30</option>
-            <option value="20:45">20:45</option>
-            <option value="21:00">21:00</option>
-        </select>
-        
-        <h2>選擇餐點</h2>
-
-        <!-- 湯包表格 -->
-        <h3>湯包</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>品項</th>
-                    <th>要薑絲</th>
-                    <th>不要薑絲</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- 修正湯包下拉選單，預設 1~10 份 -->
-		<tr><td>原味爆漿湯包 - $70</td>
-			<td><select id="item-原味爆漿湯包(要薑絲)"></select></td>
-    			<td><select id="item-原味爆漿湯包(不要薑絲)"></select></td>
-		</tr>
-		<tr><td>絲瓜湯包 - $70</td>
-    			<td><select id="item-絲瓜湯包(要薑絲)"></select></td>
-    			<td><select id="item-絲瓜湯包(不要薑絲)"></select></td>
-		</tr>
-		<tr><td>韭菜湯包 - $70</td>
-    			<td><select id="item-韭菜湯包(要薑絲)"></select></td>
-    			<td><select id="item-韭菜湯包(不要薑絲)"></select></td>
-		</tr>
-		<tr><td>麻辣湯包 - $80</td>
-    			<td><select id="item-麻辣湯包(要薑絲)"></select></td>
-    			<td><select id="item-麻辣湯包(不要薑絲)"></select></td>
-		</tr>
-		<tr><td>咖哩湯包 - $80</td>
-    			<td><select id="item-咖哩湯包(要薑絲)"></select></td>
-    			<td><select id="item-咖哩湯包(不要薑絲)"></select></td>
-		</tr>
-		<tr><td>臭豆腐湯包 - $80</td>
-    			<td><select id="item-臭豆腐湯包(要薑絲)"></select></td>
-			<td><select id="item-臭豆腐湯包(不要薑絲)"></select></td>
-		</tr>
-		<tr><td>鮮味菌菇湯包 - $80</td>
-    			<td><select id="item-鮮味菌菇湯包(要薑絲)"></select></td>
-    			<td><select id="item-鮮味菌菇湯包(不要薑絲)"></select></td>
-		</tr>
-		<tr><td>翠玉湯包，全素 - $80</td>
-    			<td><select id="item-翠玉湯包，全素(要薑絲)"></select></td>
-    			<td><select id="item-翠玉湯包，全素(不要薑絲)"></select></td>
-		</tr>
-		<tr><td>牛肉湯包 - $100</td>
-    			<td><select id="item-牛肉湯包(要薑絲)"></select></td>
-    			<td><select id="item-牛肉湯包(不要薑絲)"></select></td>
-		</tr>
-		<tr><td>黑松露湯包 - $100</td>
-    			<td><select id="item-黑松露湯包(要薑絲)"></select></td>
-    			<td><select id="item-黑松露湯包(不要薑絲)"></select></td>
-		</tr>
-            </tbody>
-        </table>
-		<!-- 修正湯品與飲品選單 -->
-		<h3>湯品與飲品</h3>
-		<label>酸辣湯：</label> 
-		<select id="item-酸辣湯"></select><br>
-		<label>古早味紅茶：</label> 
-		<select id="item-古早味紅茶"></select><br>
-
-        <h2>填寫資訊</h2>
-
-	<label>取餐人姓名：</label> 
-	<input type="text" id="name" placeholder="例如 王先生"><br>
-
-	<label>手機號碼：</label> 
-	<input type="text" id="phone" placeholder="例如 0912345678"><br>
-
-	<!-- 修改按鈕，確保 onclick 事件生效 -->
-	<button id="submit-btn">提交訂單</button>
+    <!-- 📢 宣傳公告 -->
+    <div class="announcement">
+      <p>📢 <strong>小港桂華街的鄰居好友們注意！</strong> 📢</p>
+      <p>🥢 🥟 <strong>熱騰騰的湯包來啦！</strong> 🥟 🥢</p>
+      <p>🔥 想吃美味湯包，不想浪費時間排隊嗎？</p>
+      <p>🚚 現在就用 <strong>「找老闆點餐系統」</strong> 預訂，輕鬆取餐！</p>
+      <p>💥 <strong>限時優惠：</strong> 每預訂 <strong>2 份湯包立折 10 元</strong>！ 越訂越划算！💰</p>
+      <p>🕛 <strong>預訂截止時間：</strong> <span style="color:red;">中午 12:00</span></p>
+      <p>📆 <strong>取餐日期：</strong> 📅 2025/04/22（星期二）</p>
+      <p>📍 <strong>取餐地點：</strong> 📌 小港區 桂華街</p>
+      <p>🚀 趕快動動手指，提早預訂，美味不等人！ 🤩 數量有限，快來搶購！ 🏃💨</p>
     </div>
 
-    <script src="config.js"></script>
-    <script src="menu.js"></script>
-    <script src="form.js"></script>
-    <script src="submit.js"></script>
-    <script src="main.js"></script>
+    <h2>取餐時段</h2>
+    <label for="pickup-time">請選擇取餐時段：</label>
+    <select id="pickup-time">
+      <option value="">請選擇</option>
+      <option value="16:00">16:00</option>
+      <option value="16:15">16:15</option>
+      <option value="16:30">16:30</option>
+      <option value="16:45">16:45</option>
+      <option value="17:00">17:00</option>
+      <option value="17:15">17:15</option>
+      <option value="17:30">17:30</option>
+      <option value="17:45">17:45</option>
+      <option value="18:00">18:00</option>
+      <option value="18:15">18:15</option>
+      <option value="18:30">18:30</option>
+      <option value="18:45">18:45</option>
+      <option value="19:00">19:00</option>
+      <option value="19:15">19:15</option>
+      <option value="19:30">19:30</option>
+      <option value="19:45">19:45</option>
+      <option value="20:00">20:00</option>
+      <option value="20:15">20:15</option>
+      <option value="20:30">20:30</option>
+      <option value="20:45">20:45</option>
+      <option value="21:00">21:00</option>
+    </select>
+
+    <h2>選擇餐點</h2>
+    <h3>湯包</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>品項</th>
+          <th>要薑絲</th>
+          <th>不要薑絲</th>
+        </tr>
+      </thead>
+      <tbody id="menu-body">
+        <!-- JS 會自動產生每一列 -->
+      </tbody>
+    </table>
+
+    <!-- 🧃 湯品與飲品 -->
+    <div id="others-container"></div>
+
+    <h2>填寫資訊</h2>
+    <label>取餐人姓名：</label>
+    <input type="text" id="name" placeholder="例如 王先生" />
+
+    <label>手機號碼：</label>
+    <input type="text" id="phone" placeholder="例如 0912345678" />
+
+    <button id="submit-btn">提交訂單</button>
+  </div>
+
+  <!-- JS 模組引入 -->
+  <script src="config.js"></script>
+  <script src="menu.js"></script>
+  <script src="form.js"></script>
+  <script src="submit.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
