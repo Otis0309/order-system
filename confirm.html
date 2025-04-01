@@ -20,11 +20,12 @@ window.onload = () => {
         document.getElementById("c-name").textContent = data.name;
         document.getElementById("c-phone").textContent = data.phone;
 
-        let orderText = "";
-        for (let item in data.order) {
-            orderText += `${item} x ${data.order[item]} 份\n`;
-        }
-        document.getElementById("c-order").textContent = orderText;
+    let orderText = "";
+    for (let item in data.order) {
+        orderText += `${item} x ${data.order[item]} 份<br>`;
+    }
+        document.getElementById("c-order").innerHTML = orderText;
+
     } else {
         alert("沒有找到訂單資料，請重新填寫！");
         window.location.href = "index.html";
