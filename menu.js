@@ -2,6 +2,7 @@ function loadMenuFromSheet() {
   fetch(MENU_API_URL)
     .then(res => res.json())
     .then(menuData => {
+      console.log("菜單資料：", menuData);
       const tbody = document.getElementById("menu-body");
       tbody.innerHTML = "";
 
@@ -59,6 +60,7 @@ function loadMenuFromSheet() {
 
 // 建立選單元件
 function createSelect(item) {
+  console.log("建立選單：", item);
   const select = document.createElement("select");
 
   if (!item) {
