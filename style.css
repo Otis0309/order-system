@@ -1,0 +1,90 @@
+/* 整體背景顏色與字體 */
+body {
+  background-color: #fffae6;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 表單容器外框樣式 */
+.container {
+  width: 80%;
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 標題樣式 */
+h1, h2, h3 {
+  text-align: center;
+  color: #333;
+}
+
+/* 宣傳公告樣式 */
+.announcement {
+  background-color: #fffae6;
+  border-left: 6px solid #ffcc00;
+  padding: 15px;
+  margin: 20px 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.announcement strong {
+  color: #d9534f;
+}
+
+/* 表格樣式 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* 下拉選單與輸入框 */
+select, input {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* 按鈕樣式 */
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
