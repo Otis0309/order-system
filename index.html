@@ -1,55 +1,81 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <title>湯包預訂表單</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>找老板行動餐車預訂表單</title>
 </head>
 <body>
-  <h1>湯包預訂表單</h1>
-  <form id="order-form">
-    <label for="email">電子郵件：</label>
-    <input type="email" id="email" name="email" required /><br />
+<h1 style="text-align:center;">找老闆湯包預訂表單</h1>
 
+<div id="phonePrompt">
+  <div id="phonePromptBox">
+    <h3>請輸入您的手機號碼</h3>
+    <p>手機號碼僅作為本次訂餐識別使用，不會做其他用途，可重複登入修改訂單。</p>
+    <input type="tel" id="userPhone" placeholder="例如：0900123456" maxlength="13">
+    <button id="start-btn" type="button">開始填寫</button>
+  </div>
+</div>
+
+<form id="order-form" style="display:none;">
+  <div>
+    <label for="phone">手機號碼：</label>
+    <input type="text" id="phone" name="手機號碼" readonly>
+  </div>
+
+  <div>
+    <label for="name">取餐者：</label>
+    <input type="text" id="name" name="取餐者" placeholder="例如：王先生" required>
+  </div>
+
+  <div>
     <label for="pickup">取餐時間：</label>
-    <select id="pickup" name="pickup" required>
-      <option value="">請選擇</option>
-      <option value="11:30">11:30</option>
-      <option value="12:00">12:00</option>
-      <option value="12:30">12:30</option>
-    </select><br />
+    <select id="pickup" name="取餐時間" required>
+      <option value="" disabled selected style="color:gray;">請選擇</option>
+    </select>
+  </div>
 
-    <label for="dumpling">原味爆漿湯包(要薑絲)：</label>
-    <select id="dumpling" name="dumpling" required>
-      <option value="">請選擇</option>
-      <option value="0">0</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-    </select><br />
+  <h2>湯包選擇（每種請選擇「要薑絲」與「不要薑絲」）</h2>
+  <table>
+    <tr><th>口味</th><th>要薑絲</th><th>不要薑絲</th></tr>
+    <tbody id="dumpling-table-body"></tbody>
+  </table>
 
-    <button type="submit">送出</button>
-  </form>
+  <div>
+  <label for="soup">酸辣湯：</label>
+  <select id="soup" name="酸辣湯">
+    <option value="" disabled selected style="color:gray;">請選擇</option>
+  </select>
+  </div>
 
-  <script>
-    document.getElementById('order-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
+  <div>
+  <label for="tea">爆打+檸紅茶：</label>
+  <select id="tea" name="爆打+檸紅茶">
+    <option value="" disabled selected style="color:gray;">請選擇</option>
+  </select>
+  </div>
 
-      const formData = {
-        email: document.getElementById('email').value,
-        pickup: document.getElementById('pickup').value,
-        dumpling: document.getElementById('dumpling').value,
-      };
+  <button type="submit">送出</button>
+</form>
 
-      const response = await fetch('https://script.google.com/macros/s/AKfycbxJv2ZEEXdEIQSLhL3z6H3uVXtKBqVWEKWO1hNs1QXSSg8fH2fvykTioBhmkGEV_T-nJA/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+<!-- ✅ 訂單確認 Modal -->
+<div id="orderConfirmModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000; align-items:center; justify-content:center;">
+  <div style="background:white; padding:2em; border-radius:10px; max-width:500px; width:90%;">
+    <h3>請確認您的預訂資料</h3>
+    <div id="orderSummary" style="max-height:300px; overflow-y:auto; margin:1em 0;"></div>
+    <button id="confirmSubmit" style="margin-right:1em;">✅ 正確，送出訂單</button>
+    <button id="cancelSubmit">❌ 錯誤，返回頁面</button>
+  </div>
+</div>
 
-      alert('訂單已送出，感謝您！');
-    });
-  </script>
+<div id="thankyouScreen" style="display:none; text-align:center; padding:2em;">
+  <h2>訂單已送出！</h2>
+  <p>感謝您的預訂，我們將準時為您準備！</p>
+</div>
+
+<script src="generate-pickup.js"></script>
+<script src="generate-dumpling-table.js"></script>
+<script src="generate-drinks.js"></script>
+<script src="main-phone-format.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
