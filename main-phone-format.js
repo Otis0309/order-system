@@ -25,10 +25,15 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('phonePrompt').style.display = 'none';
     document.getElementById('order-form').style.display = 'block';
 
-    // 自動查詢資料
+    // ✅ 改為 POST 查詢資料
     try {
-      const res = await fetch(`https://script.google.com/macros/s/AKfycbxJv2ZEEXdEIQSLhL3z6H3uVXtKBqVWEKWO1hNs1QXSSg8fH2fvykTioBhmkGEV_T-nJA/exec?phone=${phone}`);
+      const res = await fetch("https://script.google.com/macros/s/AKfycbxJv2ZEEXdEIQSLhL3z6H3uVXtKBqVWEKWO1hNs1QXSSg8fH2fvykTioBhmkGEV_T-nJA/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone })
+      });
       const data = await res.json();
+
       if (data["取餐時間"]) {
         const confirmEdit = confirm("您已填過訂單，是否要修改？");
         if (!confirmEdit) {
